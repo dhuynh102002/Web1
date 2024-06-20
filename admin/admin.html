@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<title>Trang admin</title>
+<link type="text/css" rel="stylesheet" href="../css/admin.css">
+<script src="../js/admin.js"></script>
+</head>
+
+<body leftmargin="0px" topmargin="0px" rightmargin="0px" onLoad="showProductList(0);hiadmin()">
+	<div id="wrapper">
+    	<div id="left"  class="">
+        	<div class="dt"><i class="fas fa-phone"></i><p>SELL PHONE</p></div>
+			<div class="logo"><img src="../images/logo1.png" alt=""><p>Hi! Admin</p></div>
+            <ul>
+                <li class="tc"><i class="fas fa-home"></i><a href="../index.html">Trang chủ</a></li>
+                <li class="tc"><i class="fas fa-mobile-alt"></i><a href="admin.html">Sản phẩm</a></li>
+                <li class="tc"><i class="fas fa-clipboard-list"></i><a href=" bill.html">Đơn hàng</a></li>
+                <li class="tc"><i class="fas fa-users"></i><a href="user.html">Khách hàng</a></li>
+            </ul>
+            <!--
+            <ul>
+                <li><i class="fas fa-home"></i><a href="../index.html">Trang chủ</a></li>
+                <li><i class="fas fa-mobile-alt"></i><a href="admin.html">Sản phẩm</a></li>
+                <li  id="dh" onclick="hienthithongtin(this);"><i class="fas fa-clipboard-list"></i><a href="#donhang">Đơn hàng</a>
+                	<div id="modal1" class="modal">
+                        <div id="info">
+                        </div>
+                	</div>
+                </li>
+                <li id="kh" onclick="hienthithongtin(this);"><i class="fas fa-users"></i><a href="#khachhang">Khách hàng</a></li>
+            </ul>
+            -->
+		</div>
+        
+        <div id="main">
+        
+        	<div id="top">
+            	<p>NHÓM 11</p>
+				<div id="hiadmin"></div>
+			</div>
+         
+            <div id="content">
+            	<div id="danhsachsp">
+                        <div id="bangsp">
+                            <h1>DANH SÁCH SẢN PHẨM</h1>
+                            <table id="productlist">
+                            </table>
+                            <div id="pagination"></div> <!-- Trang -->
+                        </div>
+                 </div>
+                    <div id="right">
+                        <div class="formright">
+                            <h1>TÌM KIẾM SẢN PHẨM</h1>
+                            <form onkeyup="searchproduct()" onchange="searchproduct()">
+                            <label for="searchproductname">Tên sản phẩm</label>
+                            <input type="text" id="searchproductname">
+                            <label for="searchproductbrand">Thương hiệu</label>
+                            <select id="searchproductbrand">
+                                <option value="all" selected>TẤT CẢ</option>
+                                <option value="samsung">SAMSUNG</option>
+                                <option value="oppo">OPPO</option>
+                                <option value="iphone">IPHONE</option>
+                                <option value="vivo">VIVO</option>
+                            </select>
+                            </form>
+                        </div>
+                        <div class="formright">
+                            <h1>THÊM SẢN PHẨM</h1>
+                            <form>
+                            <label for="productname">Tên sản phẩm</label>
+                            <input type="text" id="productname">
+                            <label for="brand">Thương hiệu:</label>
+                            <select id="brand">
+                                <option value="samsung">SAMSUNG</option>
+                                <option value="oppo">OPPO</option>
+                                <option value="iphone">IPHONE</option>
+                                <option value="vivo">VIVO</option>
+                            </select><br>
+                            <label for="productprice">Giá</label>
+                            <input type="text" id="productprice">
+                            <img id="imgadd" src="../images/product/anhtam1.jpg">
+                            <label >Ảnh</label>
+                            <input type="file" onchange="changeimgadd(this)"><br>
+                            <button type="reset" onClick="xoaloadimg()">Xóa</button>
+                            <button type="button" onClick="addProduct()">Thêm</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        	</div>
+            
+            <div id="modal2" class="modal">
+                <div id="changeproduct">
+                    <button class="close" onclick="closechangebox()">&times;</button>
+                    <div class="image">
+                        <img id="imgbefore" src="">
+                        <img id="imgafter" src="">
+                    </div>
+                    <div class="info">
+                        <label for="name">Tên sản phẩm</label>
+        				<input type="text" id="name" value="Vans Old Skool Otw Repeat"><br>
+                        <label for="name">Giá</label>
+                        <input type="text" id="price" value="1439000"><br>
+                        <input type="file" id="fileimg" onchange="changeimg(this)">
+                    </div>
+                    <button id="save">Lưu chỉnh sửa</button>
+                </div>
+			</div>
+            
+		</div>
+        <div id="customalert"></div>
+</body>
+</html>

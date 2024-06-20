@@ -1,0 +1,867 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box; /*cho mấy khung cân đối lại*/
+	border: none;
+}
+#wrapper{
+	display: flex;
+}
+#left{
+	width: 80px;
+	height: 100vh;
+	overflow: hidden; /*để không bị tràng*/
+	background-color: #131921;
+	position: fixed; /* để các phần khác nằm cùng với left menu*/
+	transition: 0.5s; /*thời gian chuyển động*/
+	
+}
+#left:hover{
+	width: 300px; /* khi hover vô left menu sẽ rộng ra*/
+}
+#left .dt{
+	margin:0;
+	color:#FFF;
+	height:50px;
+	font-size:30px;
+	margin:5px 10px;
+	display:flex;
+	margin-bottom:60px;
+}
+#left .dt i{
+	border-radius:80%;
+	border:2px solid #FFF;
+	padding:10px 10px;
+}
+#left .dt p{
+	margin:10px 20px;
+	font-size:30px;
+	color:#FFF;
+}
+#left .logo{
+	/*width: 350px;
+	height: 50px;*/
+	/*text-align: center;*/
+	background-color: #131921;
+	margin-bottom: 40px;
+	display:flex;
+}
+#left .logo img{
+	height:60px;
+	border-radius:80%;
+	border:4px solid #FFF;
+	margin-left:10px;
+	/*height: 100%;
+	margin-left:-70px;*/
+}
+#left .logo p{
+	font-size:30px;
+	color:#FFF;
+	margin: 10px 20px;
+}
+#left:hover .logo{
+	color: #fff;
+}
+#left ul li{
+	width: 100%;
+	display: flex;
+	list-style-type: none; /*bỏ dấu chấm tròn*/
+	border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+#left ul li:last-child{
+	border: none;
+}
+#left ul li:hover{ /*màu khi hover vào ul li: Trang chủ, Sản phẩm, khách hàng,...*/
+	background: #232B33;
+}
+#left ul li i{ /* những ảnh nhỏ*/
+	color:#FFF;
+	font-size: 30px;
+	width: 50px;
+	height: 50px;
+	padding-left: 30px;
+	margin-top:10px;
+}
+#left ul li a{
+	text-decoration: none; /*bỏ dấu gạch chân*/
+	color: #fff;
+	font-size: 18pt;
+	display: inline-block;
+	width: calc(100% - 50px);
+	height: 50px;
+	line-height: 50px;
+	padding-left: 70px;
+	opacity: 0;
+	
+}
+#left:hover ul li a{
+	opacity: 1;
+	transition-delay: 0.25s;
+}
+
+#left .tc:hover{
+	position: relative;
+	box-shadow: 0px 0px 30px 0px #2C3A47;
+	border-left:#2C3A47 solid 2px;
+	border-bottom:#2C3A47 solid 2px;
+	border-right:#2C3A47 solid 2px;
+	border-top:#2C3A47 solid 2px;
+}
+#main{
+	background-color: #f2f2f2;
+	width: calc(100vw - 70px);
+	margin-left: 70px;
+}
+#top{
+	background-color:#FFF;
+	height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
+}
+#top #hiadmin{
+	margin-left: auto;
+	margin-right: 100px;
+	padding: 10px;
+	font-size: 14pt;
+	font-weight: bold;
+	position: relative;
+	/*background-color: #a4b0be; nền  của Nhóm 11*/
+	border-radius: 999px;
+	float:left;
+	height:60px;
+}
+#top #hiadmin:hover button{
+	background-color: #ecf0f1;
+	color: #2f3542;
+	opacity: 1;
+}
+#top #hiadmin button{
+	font-weight: bold;
+	display: block;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	background-color: #2f3542;
+	border: 3px solid #2f3542;
+	color: #fff;
+	font-size: 14pt;
+	line-height: 100%;
+	/*position: absolute; để 2 cái nằm chồng lên*/
+	top: 0;
+	left: 0;
+	border-radius: 999px;
+	outline: none;
+	cursor: pointer;
+	/*opacity: 0; ẩn đi cái đăng xuất*/ 
+	transition: opacity 0.5s;
+}
+#top p{
+	line-height:80%
+	height: 80%;
+	color:#f39c12;
+	margin-left:200px;
+	float:left;
+	font-size:30px;
+	font-weight:bolder;
+}
+#top #hiadmin button i{
+	margin-left: auto;
+	margin-right: 20px;
+	color:#F00;
+	font-size:20px;
+}
+#top #hiadmin button:active{
+	background-color: #fff;
+	color: #2f3542;
+}
+
+#content{
+	width: 100%;
+	min-height: calc(100vh - 70px);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+#content #danhsachsp{
+	width: 65%;
+	padding: 40px 40px 0px;
+}
+#content #danhsachsp #bangsp{
+	width: 100%;
+	min-height: 830px;
+	background-color: #fff;
+	box-shadow: 0 0 20px 2px rgba(0,0,0,0.5);
+	padding: 30px 50px 10px;
+	overflow-x: auto;
+}
+#content #danhsachsp #bangsp h1{
+	text-align: center;
+	margin-bottom: 20px;
+}
+#content #danhsachsp #bangsp table,th,td{
+	border: 1px solid rgba(0,0,0,0.4);
+}
+#content #danhsachsp #bangsp table{
+	width: 100%;
+	border-collapse: collapse; /*bỏ những lần viền khung của mỗi khung*/
+}
+#content #danhsachsp #bangsp table#billlist tr:not(:first-child){
+	cursor: pointer;
+}
+#content #danhsachsp #bangsp table#billlist tr:not(:first-child):hover{
+	background-color: #ced6e0;
+}
+#content #danhsachsp #bangsp th{ /*Hàng tựa đề của bảng*/
+	background-color: #706fd3;/*#ff4700;*/
+    color: white;
+    height: 35px;
+	padding: 0 5px;
+}
+#content #danhsachsp #bangsp td{/*Hàng thông tin sp*/
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 10px;
+}
+#content #danhsachsp #bangsp td:hover{
+	background-color:#f1f2f6;
+}
+#content #danhsachsp #bangsp img{
+	height: 60px;
+    margin: 5px;
+}
+#content #danhsachsp #bangsp td:last-child{
+    text-align: center;
+}
+
+#content #danhsachsp #bangsp td .delete{
+   	background-color:#fff ;
+	font-size: 18pt;
+   	color: #706fd3;
+   	cursor: pointer;
+ 	width: 45px;
+ 	margin: 0px auto;
+ 	height: 30px;
+ 	line-height: 22px;
+	outline: none;
+	vertical-align: middle;
+	display: block;
+}
+#content #danhsachsp #bangsp td .change{
+   	background-color:#fff;
+	font-size: 17pt;
+   	color: #706fd3;
+   	cursor: pointer;
+   	padding: 0 5px;
+   	margin: 13px auto 0;
+ 	height: 25px;
+ 	width: 45px;
+ 	line-height: 22px;
+	outline: none;
+	vertical-align: middle;
+	display: block;
+}
+#content #danhsachsp #bangsp #pagination{
+	margin-top: 20px;
+	width: 100%;
+	height: 25px;
+	display: flex;
+	justify-content: center;
+}
+#content #danhsachsp #bangsp #pagination .pageNumber{
+	width: 30px;
+	height: 30px;
+	border-radius:50%;
+	background-color: #FFF;
+	border: 2px solid #000;
+	text-decoration: none;
+	text-align: center;
+	line-height: 20px;
+	font-weight:bolder;
+	margin-right: 10px;
+	cursor: pointer;
+	font-size:15px;
+	color:#2f3542;
+}
+#content #danhsachsp #bangsp #pagination .pageNumber:hover{
+	background-color:#000;
+	color: #FFF;
+}
+#content #right{
+	width: 35%;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 40px 40px 0px;
+}
+#content #right .formright{
+	width: 100%;
+	background-color: #fff;
+	box-shadow: 0 0 20px 2px rgba(0,0,0,0.5); /*độ bóng cho khung*/
+	margin-bottom: 40px;
+	padding: 20px 50px;
+}
+#content #right .formright h1{
+	text-align: center;
+	margin-bottom: 20px;
+}
+#content #right .formright form{
+	width: 300px;
+	margin: 0 auto;
+}
+#content #right .formright label{
+	font-size: 14pt;
+	cursor: pointer;
+}
+#content #right .formright input{
+	display: block;
+	width: 300px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 13pt;
+	border: 1px solid rgba(0,0,0,.2);
+	border-bottom: 2px solid #000;
+	margin: 5px 0 20px 0px;
+}
+#content #right .formright input:focus{ /*khi trỏ chuột vô khung button*/
+	outline: none;
+	border-bottom: 2px solid #706fd3;
+}
+#content #right .formright select{
+	height: 30px;
+	width: 173px;
+	border: 1px solid rgba(0,0,0,.2);
+	border-bottom: 2px solid #000;
+	margin: 5px 0 20px 20px;
+}
+#content #right .formright #imgadd{
+	width: 150px;
+	margin: 0 auto;
+	display: block;
+}
+#content #right .formright button{
+	background-color: #fff;
+	border: 2px solid #000;
+	width: 80px;
+	height: 30px;
+	color: #000;
+	font-size: 14pt;
+	cursor: pointer;
+	box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.3);
+}
+#content #right .formright button:hover{
+	border: 2px solid #ff4d4d;
+	color: #ff4d4d;
+}
+.modal{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.6);
+	position: fixed;
+	top:0;
+	left: 0;
+	display: none;
+	z-index: 10;
+}
+<!--------------bên trang đơn hàng-------------->
+#modal1 #changeproduct{
+	width: 60%;
+	height: auto;
+	background-color: #fff;
+	margin: 50px auto;
+	position: relative;
+	padding: 10px;
+	animation: topdown 0.5s;
+}
+#modal1 #changeproduct .close{
+	position: absolute;
+	right: 15px;
+	top: 0px;
+	font-size: 40pt;
+	background: none;
+	outline: none;
+cursor: pointer;
+}
+#modal1 #changeproduct .close:hover{
+	color: #ff4700;
+}
+#modal1 #changeproduct .image{
+	margin-top: 50px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-around;
+}
+#modal1 #changeproduct .image img{
+	width: 40%;
+	padding: 20px;
+	border:  1px solid #000;
+	border-radius: 10px;
+}
+#modal1 #changeproduct .info{
+	width: 700px;
+	margin: 50px auto 0;
+}
+#modal1 #changeproduct .info label{
+	width: 200px;
+	font-size: 14pt;
+	font-weight: bold;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+#modal1 #changeproduct .info input{
+	font-size: 13pt;
+	width: 400px;
+	border-bottom: 2px solid #000;
+	margin-bottom: 10px;
+}
+#modal1 #changeproduct .info #fileimg{
+	font-size: 13pt;
+	width: 400px;
+	border: 2px solid #000;
+	margin-left: 202px;
+	cursor: pointer;
+}
+#modal1 #changeproduct button#save{
+	font-size: 16pt;
+	width: 200px;
+	padding: 10px;
+	margin: 30px auto;
+	border: 3px solid #ff4700;
+	background-color: #ff4700;
+	color: #fff;
+	display: block;
+	cursor: pointer;
+}
+
+#modal1 #changeproduct button#save:hover{
+	background-color: #fff;
+	color: #ff4700;
+}
+#modal1 #info{
+	width: 500px;
+	height: 600px;
+	background-color: #fff;
+	margin: 20px auto;
+	position: relative;
+	padding: 20px;
+}
+#modal1 #info .close{
+	position: absolute;
+	right: 15px;
+	top: 0px;
+	font-size: 40pt;
+	background: none;
+	outline: none;
+	cursor: pointer;
+}
+#modal1 #info h4{
+	font-size: 14pt;
+	margin-top: 20px;
+}
+#modal1 #info p{
+	font-size: 14pt;
+	margin-top: 5px;
+}
+#modal1 #info #status{
+	display: inline-block;
+	font-size: 14pt;
+	height: 34px;
+	line-height: 34px;
+	width: 200px;
+}
+#modal1 #info label{
+	margin-left: 50px;
+	cursor: pointer;
+	display: inline-block;
+  	height: 34px;
+  	position: relative;
+ 	width: 60px;
+ 	vertical-align: middle;
+}
+#modal1 #info label input{
+	display: none;
+}
+#modal1 #info label .slider {
+	background-color: #ccc;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	left: 0;
+	cursor: pointer;
+	position: absolute;
+	transition: 0.4s;
+	border-radius: 999px;
+}
+#modal1 #info label .slider:before {
+	content: "";
+	background-color: #fff;
+	height: 26px;
+	bottom: 4px;
+	left: 4px;
+	position: absolute;
+	transition: 0.4s;
+	width: 26px;
+	border-radius: 999px;
+}
+#modal1 #info label input:checked + .slider {
+  	background-color: #706fd3;
+}
+
+#modal1 #info label input:checked + .slider:before {
+  	left: 30px;
+}
+#modal1 #info .printbtn{
+	width: 100px;
+	background-color: #000;
+	color: #fff;
+	height: 25px;
+	border: 2px solid #000;
+	line-height: 25px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+#modal1 #info .printbtn:hover{
+	background-color: #fff;
+	color: #000;
+}
+<!--------------bên trang sản phẩm-------------->
+/*height: 600px;
+    width: 1000px;
+    background-color: #fff;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 20px 20px;
+    position: relative;
+    animation: topdown 0.5s;
+    z-index: 20;*/
+.hienthimodal{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.6);
+	position: fixed;
+	top:0;
+	left: 0;
+	display:none;
+	z-index: 10;
+}
+#modal2 #changeproduct{
+	
+	width: 60%;
+	height: auto;
+	background-color: #fff;
+	margin: 50px auto;
+	position: relative;
+	padding: 10px;
+	animation: topdown 0.5s;
+}
+#modal2 #changeproduct .close{
+	position: absolute;
+	right: 15px;
+	top: 0px;
+	font-size: 40pt;
+	background: none;
+	outline: none;
+	cursor: pointer;
+}
+#modal2 #changeproduct .close:hover{
+	color: #ff4700;
+}
+#modal2 #changeproduct .image{
+	margin-top: 50px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-around;
+}
+#modal2 #changeproduct .image img{
+	width: 40%;
+	padding: 20px;
+	border:  1px solid #000;
+	border-radius: 10px;
+}
+#modal2 #changeproduct .info{
+	width: 700px;
+	margin: 50px auto 0;
+}
+#modal2 #changeproduct .info label{
+	width: 200px;
+	font-size: 14pt;
+	font-weight: bold;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+#modal2 #changeproduct .info input{
+	font-size: 13pt;
+	width: 400px;
+	border-bottom: 2px solid #000;
+	margin-bottom: 10px;
+}
+#modal2 #changeproduct .info #fileimg{
+	font-size: 13pt;
+	width: 400px;
+	border: 2px solid #000;
+	margin-left: 202px;
+	cursor: pointer;
+}
+#modal2 #changeproduct button#save{
+	font-size: 16pt;
+	width: 200px;
+	padding: 10px;
+	margin: 30px auto;
+	border: 3px solid #706fd3;
+	background-color: #2c2c54;
+	color: #fff;
+	display: block;
+	cursor: pointer;
+}
+
+#modal2 #changeproduct button#save:hover{
+	background-color: #fff;
+	color:#2c2c54;
+}
+#modal2 #info{
+	width: 500px;
+	height: 600px;
+	background-color: #fff;
+	margin: 20px auto;
+	position: relative;
+	padding: 20px;
+}
+#modal2 #info .close{
+	position: absolute;
+	right: 15px;
+	top: 0px;
+	font-size: 40pt;
+	background: none;
+	outline: none;
+	cursor: pointer;
+}
+#modal2 #info h4{
+	font-size: 14pt;
+	margin-top: 20px;
+}
+#modal2 #info p{
+	font-size: 14pt;
+	margin-top: 5px;
+}
+#modal2 #info #status{
+	display: inline-block;
+	font-size: 14pt;
+	height: 34px;
+	line-height: 34px;
+	width: 200px;
+}
+#modal2 #info label{
+	margin-left: 50px;
+	cursor: pointer;
+	display: inline-block;
+  	height: 34px;
+  	position: relative;
+ 	width: 60px;
+ 	vertical-align: middle;
+}
+#modal2 #info label input{
+	display: none;
+}
+#modal2 #info label .slider {
+	background-color: #ccc;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	left: 0;
+	cursor: pointer;
+	position: absolute;
+	transition: 0.4s;
+	border-radius: 999px;
+}
+#modal2 #info label .slider:before {
+	content: "";
+	background-color: #fff;
+	height: 26px;
+	bottom: 4px;
+	left: 4px;
+	position: absolute;
+	transition: 0.4s;
+	width: 26px;
+	border-radius: 999px;
+}
+#modal2 #info label input:checked + .slider {
+  	background-color: #ff4700;
+}
+
+#modal2 #info label input:checked + .slider:before {
+  	left: 30px;
+}
+#modal2 #info .printbtn{
+	width: 100px;
+	background-color: #000;
+	color: #fff;
+	height: 25px;
+	border: 2px solid #000;
+	line-height: 25px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+#modal2 #info .printbtn:hover{
+	background-color: #fff;
+	color: #000;
+}
+
+/*customalert - Thông báo khi success or warning*/
+#customalert {
+    visibility: hidden;
+    min-width: 250px;
+    color: #fff;
+    font-size: 14pt;
+    text-align: center;
+    border-radius: 2px;
+    padding: 20px;
+    position: fixed;
+    z-index: 100;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+}
+#customalert.show {
+    visibility: visible;
+ 	animation: fadein 0.5s, fadeout 0.5s 3s;
+}
+/*ANIMATION*/
+@keyframes fadein {
+from {top: 0; opacity: 0;}
+    to {top: 30px; opacity: 1;}
+}
+@keyframes fadeout {
+    from {top: 30px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+}
+@keyframes topdown{
+	0% {transform: translateY(-800px)}
+	100% {transform: translateY(0)}
+}
+@media only screen and (min-width: 901px)and (max-width: 1360px) {
+    #content #left{
+		width: 100%;
+	}
+	#content #danhsachsp{
+		width:100%;
+	}
+	#content #right{
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	#content #right .formright{
+		width: 48%;
+		padding: 10px;
+	
+	}
+	
+}
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+	#content #left{
+		display: none;
+	}
+	#content #danhsachsp{
+		width:100%;
+	}
+	#nav #btnmenu{
+		display: block;
+	}
+	#main{
+		width: 100vw;
+		margin: 0;
+	}
+    #content #left{
+		width: 100%;
+		padding: 40px 20px 0px;
+	}
+	#content #left #content{
+		padding: 20px;
+	}
+	#content #right{
+		width: 100%;
+		flex-wrap: wrap;
+		padding: 40px 20px 0px;
+	}
+	#content #right .formright{
+		width: 100%;
+		padding: 10px;
+	}
+}
+@media only screen  and (min-width: 0px) and (max-width: 600px) {
+	#left{
+		display: none;
+	}
+	#content #danhsachsp{
+		width:100%;
+	}
+	#content #productlist{
+		width:100%;
+	}
+	#nav #btnmenu{
+		display: block;
+	}
+	#main{
+		width: 100vw;
+		margin: 0;
+	}
+    #content #left{
+		width: 100%;
+		padding: 0px 0px;
+	}
+	#content #left #content{
+		padding: 0px;
+		box-shadow: none;
+	}
+	#content #right{
+		width: 100%;
+		flex-wrap: wrap;
+		padding: 10px 0px;
+	}
+	#content #right .formright{
+		width: 100%;
+		padding: 10px;
+		border: 2px solid #000;
+		box-shadow: none;
+	}
+}
+@media print{
+	#lefts, #maint, button{
+		display: none;
+	}
+	#modal1{
+		display: block;
+	}
+	#modal1 #info{
+		width: 100%;
+		height: 100%;
+		margin: 0;
+	}
+	#modal1 #info h4:last-of-type{
+		display: none;
+	}
+	#modal1 #info div{
+		display: none;
+	}
+	
+	
+	
+	#modal2{
+		display: block;
+	}
+	#modal2 #info{
+		width: 100%;
+		height: 100%;
+		margin: 0;
+	}
+	#modal2 #info h4:last-of-type{
+		display: none;
+	}
+	#modal2 #info div{
+		display: none;
+	}
+}

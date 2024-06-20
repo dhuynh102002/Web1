@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cart</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<link rel="shortcut icon" href="../images/icon/favicon.ico">
+<link rel="stylesheet" href="css/jQuery.UI.css" type="text/css" media="all" />
+<link type="text/css" rel="stylesheet" href="css/style.css">
+<script src="js/javascript.js"></script>
+</head>
+<body leftmargin="0px" topmargin="0px" rightmargin="0px" onLoad="showMenu();showCartTable();checklogin();">
+	<div id="wrapper">
+	  <img src="images/logo1.png" alt="Sellphone" style="width:150px; height:150px; margin-left: 100px;margin-top:20px" >
+      
+	  <div class="searchbox">
+      <form onkeyup="searchproduct()" onClick="searchproduct()">
+		  <input type="" id="searchproductname" placeholder="Search..."/>
+		  <button id="submit"></button>
+  			<div class="line"></div>
+            </form>
+	  </div>
+      <div class="icons-admin">
+      	<li><button onClick="showform()"><i class="fas fa-user-cog" style="color:#FFF"></i></button></li>
+        <li><button onClick="location.href='cart.html'"><i class="fas fa-shopping-cart" style="color: #FFF"></i></button></li>
+      </div>
+     <div class="icons">
+     	<a href="https://www.facebook.com/"><i class="fab fa-facebook"  style="color:#06F"></i></a>
+        <a href="https://www.instagram.com/" ><i class="fab fa-instagram"  style=" color:#8A3AB9"></i></a>
+        <a href="https://twitter.com/?lang=vi"><i class="fab fa-twitter"  style="color: #1DA1F2" ></i></a>
+     </div>
+	</div>
+    
+	<div id="toggle">
+		<i class="fas fa-bars"></i>
+    </div>
+    
+    <div id="header">
+    	<header>
+    	<nav class="container">
+            <ul id="main-menu">
+            <!--
+            	Trang chủ, Danh mục, Giới thiệu, Liên hệ
+            -->
+            </ul>
+        </nav>
+        </header>
+    </div>
+		
+		<div id="user" class="modal">
+			<div id="login">
+				<form id="loginform">
+					<button type="button" class="close" onClick="closeform()">X</button>
+					<h2>ĐĂNG NHẬP</h2>
+					<div class="logininfo">
+						<div class="col">
+							<label for="usernameLogin">Tên đăng nhập:</label>
+							<input type="text" id="usernameLogin">
+							<div id="usernameerror">Bạn chưa nhập tên đăng nhập</div>
+							<label for="passwordLogin">Mật khẩu:</label>
+							<input type="password" id="passwordLogin">
+							<div id="passwordloginerror">Bạn chưa nhập mật khẩu</div>
+						</div>
+					</div>
+					<button type="submit" id="btnlogin">Login</button>
+					<p>Bạn chưa có tài khoản? <a href="#" onClick="showSignUp()">Đăng ký</a></p>
+				</form>
+			</div>
+			<div id="signup">
+				<form id="signupform">
+					<button type="button" class="close" onClick="closeform()">X</button>
+					<h2>ĐĂNG KÝ</h2>
+					<div class="signupinfo">
+						<div class="col">
+							<label for="fullname"style="margin-left:20px">Họ và tên: </label>
+							<input type="text" id="fullname">
+							<div id="fullnameerror" >Bạn chưa nhập họ tên</div>
+							<label for="address" style="margin-top:50px; margin-left:20px;">Địa chỉ: </label>
+							<input type="text" id="address">
+							<div id="addresserror">Bạn chưa địa chỉ</div>
+							<label for="phone"  style="margin-top:50px; margin-left:20px;">Số điện thoại: </label>
+							<input type="text" id="phone">
+							<div id="phoneerror">Bạn chưa nhập số điện thoại</div>
+						</div>
+						<div class="col">
+							<label for="usernameSignUp" style="margin-top:-170px;margin-left:360px;float:left">Tên đăng nhập: </label>
+							<input type="text" id="usernameSignUp" style="margin-top:-145px;margin-left:400px;float:left">
+							<div id="usererror">Bạn chưa nhập tên đăng nhập</div>
+							<label for="passwordSignUp" style="margin-top:-95px;margin-left:360px;float:left" >Mật khẩu: </label>
+							<input type="password" id="passwordSignUp" style="margin-top:-70px;margin-left:400px;float:left">
+							<div id="passworderror">Bạn chưa nhập mật khẩu</div>
+							<label for="passwordSignUp2" style="margin-top:-25px;margin-left:360px;float:left">Nhập lại mật khẩu: </label>
+							<input type="password" id="passwordSignUp2" style="margin-top:0px;margin-left:400px;float:left">
+							<div id="password2error">Mật khẩu không trùng khớp</div>
+						</div>
+					</div>
+					<button type="submit" id="btnsignup">login</button>
+					<p>Trở về trang!<a href="#" onClick="showLogin()">Đăng nhập</a></p>
+				</form>
+			</div>
+		</div> 
+        
+        
+	
+        
+	<div id="cart">
+         <div id="menu"><!--menu---->
+         <div id="title">
+			<div class="sa">
+				<h1>Giỏ hàng</h1>
+			</div>
+		</div>
+        
+		<div class="contai">
+			<div id="contain">
+				<table id="bill" style="display:none">
+				</table>
+				<table id="carttable">
+                
+				</table>
+				<div class="total">Thành tiền: <span id="totalprice"></span></div>
+                <div class="thanhphan">
+                	<a href="index.html"><div class="tieptucmuahang"><p>Tiếp tục mua hàng</p></div></a>
+                    
+                        <button onclick="deletecart()">Xóa tất cả</button>
+                        <button onclick="buy()">Thanh toán</button>
+                   
+				</div>				
+			</div>
+		</div>
+	</div>
+</div><!-- menu end-->
+<div id="thongtin">
+       		<div id="vanchuyen" >
+            	<i class="fas fa-sync"></i>
+                <p>Đổi Trả Miễn Phí</p>
+                <ul>Xem hàng trước khi nhận. Hoàn trả miễn phí nếu không hài lòng</ul>
+            </div>
+            <div id="vanchuyen"style="border-right:#CCC solid 2px; border-left:#CCC solid 2px">
+            	<i class="fas fa-home"></i>
+                <p>Bảo Hành 1 năm</p>
+                <ul>Bảo hành 1 năm. Lỗi 1 đổi 1 tất cả các sản phẩm của Sellphone</ul>
+            </div>
+			<div id="vanchuyen" >
+            	<i class="fas fa-truck"></i>
+                <p>Giao hàng toàn quốc</p>
+                <ul>Ship COD toàn quốc. Nhận hàng trong vòng 2-3 ngày<ul>
+            </div>
+</div>
+	<div id="foot">
+			<div class="fo">
+				<div class="topfoot">
+					<div class="hinh"><img src="images/logo1.png" alt="Sellphone"></div>
+				<div class="footmenu">
+					<h4>Địa chỉ cửa hàng</h4>
+					<a href="../file/contact.html"><i class="fas fa-map-marked-alt"></i>Nguyễn Thị Thập Tân Quy Quận 7 TP.HCM</a></i><br>
+					<a href="../file/contact1.html"><i class="fas fa-map-marked-alt"></i>An Dương Vương Phường 6 Quận 5 TP.HCM</a></i><br>
+					<a href="../file/contact2.html"><i class="fas fa-map-marked-alt"></i>Phan văn Trị Quận Gò Vấp TP.HCM</a></i>
+				</div>
+				<div class="footmenu">
+					<h4>Liên hệ</h4>
+					<a href="../file/contact3.html"><i class="fas fa-map-marker-alt"></i>Cửa hàng chính: An Dương Vương Phường 6 Quận 5 TP.HCM</a></i><br>
+					<a href="../file/contact4.html"><i class="fas fa-phone"></i>SDT: 037598168</a></i><br>
+					<a href="../file/contact4.html"><i class="fas fa-envelope-square"></i>Email: sellphone@gmail.com</a></i>
+				</div>
+				<div class="footmenu">
+					<h4>Liên kết nhanh</h4>
+					<a href="../file/contact3.html">Hướng dẫn mua hàng </a><br>
+					<a href="../file/contact3.html">Chính sách bảo hành</a><br>
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook"  style="color:#06F"></i></a>
+        			<a href="https://www.instagram.com/" ><i class="fab fa-instagram"  style=" color:#8A3AB9"></i></a>
+        			<a href="https://twitter.com/?lang=vi"><i class="fab fa-twitter"  style="color: #1DA1F2" ></i></a>
+				</div>
+			</div>
+			<div class="botfoot">
+				<p>Copyright 2021 by Sellphone. All rights reserved</p>
+			</div>
+		</div>
+	</div>
+	<div id="customalert"></div>
+	
+</body>
+</html>

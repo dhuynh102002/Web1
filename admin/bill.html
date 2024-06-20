@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<title>Quản lý đơn hàng</title>
+	<link type="text/css" rel="stylesheet" href="../css/admin.css">
+</head>
+<body onload="hiadmin();showbilllist()">
+	<div id="wrap">
+	<div id="left"  class="">
+			<div class="dt"><i class="fas fa-phone"></i><p>SELL PHONE</p></div>
+			<div class="logo"><img src="../images/logo1.png" alt=""><p>Đơn hàng</p></div>
+            <ul>
+                <li class="tc"><i class="fas fa-home"></i><a href="../index.html">Trang chủ</a></li>
+                <li class="tc"><i class="fas fa-mobile-alt"></i><a href="admin.html">Sản phẩm</a></li>
+                <li class="tc"><i class="fas fa-clipboard-list"></i><a href="bill.html">Đơn hàng</a></li>
+                <li class="tc"><i class="fas fa-users"></i><a href="user.html">Khách hàng</a></li>
+            </ul>
+            
+	</div>
+	<div id="main">
+		<div id="top">
+            	<p>Nhóm 11</p>
+				<div id="hiadmin"></div>
+		</div>
+		<div id="content">
+			<div id="danhsachsp">
+				<div id="bangsp">
+					<h1>DANH SÁCH ĐƠN HÀNG</h1>
+					<table id="billlist">
+						<tr>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div id="right">
+				<div class="formright">
+					<h1>TÌM KIẾM</h1>
+					<form onkeyup="searchBill()">
+					<label for="name">Tên khách hàng</label>
+					<input type="text" id="name">
+					<label for="date">From</label>
+					<input type="date" id="datefrom">
+                    <label for="date">to</label>
+					<input type="date" id="dateto">
+					<label for="status">Trạng thái</label>
+					<select id="statussearch">
+                    	<option value="Tất cả">Tất cả</option>
+						<option value="Chưa xử lý">Chưa xử lý</option>
+						<option value="Đã xử lý">Đã xử lý</option>
+					</select>
+					<button type="button" onclick="searchBill()" >Tìm</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="modal1" class="modal">
+		<div id="info">
+		</div>
+	</div>
+</div>
+<script src="../js/admin.js"></script>
+</body>
+</html>

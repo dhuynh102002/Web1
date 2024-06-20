@@ -1,0 +1,68 @@
+.price-range-block {
+    margin:60px;
+}
+
+.sliderText{
+   
+    margin-bottom:30px;
+    border-bottom: 2px solid #999;
+    padding: 10px 0 10px 0px;
+    font-weight:bold;
+}
+.sliderText h2{
+	display:block;
+}
+/*thanh ngang màu xám*/
+.ui-slider-horizontal {
+    width: 200px;
+    height: 5px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+/*thanh chính giữa dấu chấm tròn*/
+.ui-widget-header {
+	top:-5px;
+    background: #2f3542;
+}
+/*Thanh ngang màu xám*/
+.ui-widget.ui-widget-content {border: 1px solid #202020; background:#f1f2f6}
+/*dấu chấm tròn*/
+.ui-slider-handle.ui-corner-all.ui-state-default {
+    width: 20px;
+    height: 20px;
+    top: -9px;
+    border-radius: 50%;
+    background:#2f3542;
+}
+
+.price-range-search {
+    background-color:#2f3542;
+    color: #FFF;
+    border: 1px solid #2f3542;
+    height: 32px;
+    border-radius: 10px;
+    margin:70px 0px;
+    font-size:16px;
+   
+}
+.price-range-search:hover{
+	background-color:#57606f;
+	transition:all 0.3s;
+}
+/*khung số từ mấy dến mấy*/
+#min_price{
+
+	margin-left:20px;
+}
+.price-range-field {
+	width:100px;
+    background-color:#f1f2f6; 
+    border: 1px solid #000; 
+    color: #000;
+    font-size: 15px;
+    border-radius: 5px; 
+    padding:5px;
+	margin-left:200px
+	
+}
+
